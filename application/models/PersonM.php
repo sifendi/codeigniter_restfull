@@ -13,7 +13,6 @@ class PersonM extends CI_Model{
 
   // function untuk insert data ke tabel tb_person
   public function add_person($name,$address,$phone){
-
     if(empty($name) || empty($address) || empty($phone)){
       return $this->empty_response();
     }else{
@@ -58,7 +57,7 @@ class PersonM extends CI_Model{
       $where = array(
         "id"=>$id
       );
-      
+
       $this->db->where($where);
       $delete = $this->db->delete("tb_person");
       if($delete){
