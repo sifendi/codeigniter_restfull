@@ -42,7 +42,6 @@ class PersonM extends CI_Model{
 
   // mengambil semua data person
   public function all_person(){
-
     $all = $this->db->get("tb_person")->result();
     $response['status']=200;
     $response['error']=false;
@@ -53,14 +52,13 @@ class PersonM extends CI_Model{
 
   // hapus data person
   public function delete_person($id){
-
     if($id == ''){
       return $this->empty_response();
     }else{
       $where = array(
         "id"=>$id
       );
-
+      
       $this->db->where($where);
       $delete = $this->db->delete("tb_person");
       if($delete){
